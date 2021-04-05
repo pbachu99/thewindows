@@ -18,7 +18,7 @@ win2k19-2/
 * Windows 2019 DVD ISO (for the above vagrant package)
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-* Obviously "Git" installed on your system to work with GitHub
+* "Git" installed on your system to work with GitHub
 
 # Optional Editing Software
 
