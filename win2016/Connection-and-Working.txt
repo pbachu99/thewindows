@@ -1,0 +1,41 @@
+# Connecting and working
+
+# software 
+we put software here and install
+
+MINGW64 /d/git/vagrant/thewindows/win2016 
+$ mkdir software
+
+MINGW64 /d/git/vagrant/thewindows/win2016 
+$ ll software/
+total 0
+
+$ ll software/
+SQLServer2019-x64-ENU-Dev
+SSMS-Setup-DEU.exe
+MsSqlCmdLnUtils.msi
+PowerShell-7.1.0-win-x64
+
+# Scripts directory 
+the scripts directory has the scripts to disable not so relevant to Vagrant and save some memory
+
+# connecting PowerShell (not so useful)
+The below command shows how we connect to VM using PowerShell running on Guest VM
+
+$ vagrant.exe powershell
+==> default: Detecting if a remote PowerShell connection can be made with the guest...
+    default: Creating powershell session to 127.0.0.1:55985
+    default: Username: vagrant
+[127.0.0.1]: PS C:\Users\vagrant\Documents>
+
+[127.0.0.1]: PS C:\Users\vagrant\Documents> hostname
+hostname
+win2k16
+
+[127.0.0.1]: PS C:\Users\vagrant\Documents> $psversiontable
+$psversiontable
+Name                           Value                                                         
+----                           -----                                                         
+PSVersion                      5.1.14393.693 
+
+
