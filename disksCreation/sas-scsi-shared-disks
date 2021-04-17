@@ -4,7 +4,7 @@
 VBoxManage createmedium disk --filename clsd1 --size 2048 --format vmdk --variant Fixed
 VBoxManage createmedium disk --filename clsd2 --size 2048 --format vmdk --variant Fixed
 VBoxManage createmedium disk --filename clsd3 --size 2048 --format vmdk --variant Fixed
-VBoxManage createmedium disk --filename clsd4 --size 1024 --format vmdk --variant Fixed
+VBoxManage createmedium disk --filename clsd4 --size 2048 --format vmdk --variant Fixed
 
 # attaching SAS/SCSI Controller 
 # replace vm_name with your virtual box name / virtual machine name

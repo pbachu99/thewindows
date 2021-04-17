@@ -1,9 +1,10 @@
 ## creating additional disks for Windows system 
 * we can use the command line interface or script it
 * for creating additional disks and attach to Windows Server
-* The steps are:
+* the file 'sas-scsi-shared-disks' is for creating SAS/SCSI shared disks
+* the below steps are for creating VHD disks:
 ```
-change to the directory where the VM is or create individual directory for disks
+change to the directory where the VM is or create a separate directory for shared disks
 1st Step:
 The VM should be in shut down state 
 Below is an example for creating disks in win2k19-1 directory:
