@@ -2,7 +2,7 @@
 * Quick set up of two Windows Servers using Vagrant Package - two Workgroup Servers
 
 ```
-$ ll /d/git/vagrant/thewindows/
+$ ll /d/git/thewindows/
 win2k19-1/
 win2k19-2/
 ```
@@ -28,9 +28,9 @@ https://drive.google.com/file/d/1Le-58PhjPllOXkER_XuWSUzk7HuT5w2i/view?usp=shari
 
 $ pwd
 ```
-/d/git/vagrant/thewindows/win2k19-2 
+/d/git/thewindows/win2k19-2 
 ```
-$ ll /d/git/vagrant/thewindows/win2k19-2
+$ ll /d/git/thewindows/win2k19-2
 ```
 Connection-and-Working.txt
 Links

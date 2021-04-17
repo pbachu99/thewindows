@@ -11,4 +11,4 @@
 *.vhd
 *.iso
 *.bak 
-*.wfw
+*.vmdk

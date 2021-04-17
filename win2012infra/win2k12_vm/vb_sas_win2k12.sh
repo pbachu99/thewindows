@@ -1,0 +1,34 @@
+#creates a virtual machine on Oracle Virtual Box  with SAS/SCSI controller
+VM='test_sas_Win2k12'
+VBoxManage createmedium disk --filename $VM.vmdk --size 102432 --format VMDK
+VBoxManage createvm --name $VM --ostype "Other_64" --register
+# --ostype "Windows2012_64" 
+# --ostype "WindowsNT_64"
+
+VBoxManage storagectl $VM --name "LSILogicSAS" --add sas --controller  LSILogicSAS
+
+# point to the directory where your Windows ISO file
+VBoxManage storageattach $VM --storagectl "LSILogicSAS" --port 0 --device 0 --type dvddrive --medium /d/Softwares/Windows-2012-OS-Server/Win2012_SE_SERVER_EVAL_EN-US-X64.ISO
+
+VBoxManage storageattach $VM --storagectl "LSILogicSAS" --port 1 --device 0 --type hdd --nonrotational on --medium $VM.vmdk
+# "with --nonrotational on" we make this disk as SSD
+
+VBoxManage modifyvm $VM --audio none
+VBoxManage modifyvm $VM --audioout off
+VBoxManage modifyvm $VM --ioapic on
+VBoxManage modifyvm $VM --firmware efi      # EFI enabled
+VBoxManage modifyvm $VM --paravirtprovider default       # paravirtualization default  
+VBoxManage modifyvm $VM --boot1 dvd --boot2 disk --boot3 none --boot4 none
+VBoxManage modifyvm $VM --memory 4048 --vram 128
+VBoxManage modifyvm $VM --nic1 NAT
+VBoxManage modifyvm $VM --cpus 2
+VBoxManage modifyvm $VM --graphicscontroller vboxsvga
+VBoxHeadless -s $VM
+
+
+#### Creating SAS Disks and attaching
+#VBoxManage createmedium disk --filename sasd1 --size 10240 --format VMDK
+#VBoxManage createmedium disk --filename sasd2 --size 10240 --format VMDK
+#
+#VBoxManage storageattach $VM --storagectl "LSILogicSAS" --port 0 --device 0 --type hdd --medium sasd1.vmdk
+#VBoxManage storageattach $VM --storagectl "LSILogicSAS" --port 1 --device 0 --type hdd --medium sasd2.vmdk

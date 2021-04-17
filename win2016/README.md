@@ -25,9 +25,9 @@ https://drive.google.com/file/d/1h3QZPowBQyvhSFjOULm61U1dkbbmEOhY/view?usp=shari
 
 $ pwd
 ```
-/d/git/vagrant/thewindows/win2016
+/d/git/thewindows/win2016
 ```
-$ ll /d/git/vagrant/thewindows/win2016
+$ ll /d/git/thewindows/win2016
 ```
 Connection-and-Working.txt
 Links
