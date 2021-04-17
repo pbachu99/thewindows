@@ -1,28 +1,28 @@
-# Vagrant Build for Windows 2012 Datacenter Server
-# This is an older version Server, but still saving it. Major changes started with Server 2012!
-* prior to Vagrant, script was used to spin up a new virtual machine on Virtual Box
-* the directory 'win2k12_vm' has script for creating VM with SAS/SCSI and SATA Controller
+# vagrant build for windows 2012 datacenter server
+# this is an older version server, but still saving it. major changes started with server 2012!
+* prior to vagrant, script was used to spin up a new virtual machine on virtual box
+* the directory 'win2k12_vm' has script for creating vm with sas/scsi and sata controller
 
-* Quick set up of our own Windows Server using Vagrant Package
-* With Vagrant Package we build our own Vagrant box
-* Feel free to copy or fork this stuff.
+* quick set up of our own windows server using vagrant package
+* with vagrant package we build our own vagrant box
+* feel free to copy or fork this stuff.
 
-# How can we use this? (Info for novice users)
-* With the below directory structure we can create a set of servers and explore services
-* each directory is specific to a server. The below link shows if you not tried yet 
+# how can we use this? (info for novice users)?
+* with the below directory structure we can create a set of servers and explore services
+* each directory is specific to a server. the below link shows if you not tried yet 
 ```
 $ /d/git/vagrant/windows2012infra/
 $ mkdir testinfra
 $ cd testinfra
 $ mkdir system-1 system-2 system-3 system-4
 ```
-# Preparation of VM and Vagrant Package on the below link (detailed steps)
+# preparation of VM and Vagrant Package on the below link (detailed steps)
 https://drive.google.com/file/d/1iSKhi37c54O-KMwehoubgRvTG9oliXc5/view?usp=sharing
 
-# Additonal: Disks attaching
-https://github.com/pbachu99/vagrant/tree/master/thewindows/disksCreation
+# additonal: Disks attaching
+* https://github.com/pbachu99/thewindows/tree/master/disksCreation
 
-# Required Software
+# required software
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * Windows 2012R2 DVD ISO

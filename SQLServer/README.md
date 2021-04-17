@@ -1,8 +1,8 @@
-# Below are few SQL related for testing and learning purposes
-# All SQL Related Articles (previous)
+# below are few sql related for testing and learning purposes
+# all sql related articles (previous)
 * [Related Docs] https://drive.google.com/drive/u/1/folders/1KGzouMPKCgrJMHtx-tdL-DYhJxUVqgY1
 
-# Setting up Primary and Standby Oracle Database 11G R2 on Windows Server
+# setting up Primary and Standby Oracle Database 11G R2 on Windows Server
 * [Ora DB on Windows] https://drive.google.com/file/d/1EgFJrDxwe0RatYOvjBB8-BzOPwdYxoSW/view?usp=sharing
 
 # SQLServer latest (brief overview)

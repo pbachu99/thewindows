@@ -1,14 +1,15 @@
-#Windows 10 ISO Image creation 
+# windows 10 iso image creation 
+* https://drive.google.com/file/d/1Z_NaMY1aI0EbEV-y6u5ZmQnaB1ryY2fc/view?usp=sharing
 
-#How can we use this? (Info for novice users)
-# Preparation of VM and Vagrant Package (detailed steps)
-https://drive.google.com/file/d/12dWMOAPeJAHE37l9GYdWCXCRyu0c95eU/view?usp=sharing
-https://docs.google.com/document/d/16s5zbjRlqrop42UQa-cuK1zBRC2ZAeW0_pZFzYgfnHA/edit?usp=sharing
+* how can we use this? (info for novice users)?
 
-* We can build our own Vagrant box using this ISO
-* Feel free to copy or fork this stuff.
+* preparation of Windows Vagrant Package (detailed steps)
+* https://drive.google.com/file/d/1tErE3kg5QLcumXW3iTs2mGbmkuW62ZRt/view?usp=sharing
 
-## Additonal: Disks attaching
-https://github.com/pbachu99/vagrant/tree/master/thewindows/disksCreation
+* we can build our own vagrant box using this iso
+* feel free to copy or fork this stuff.
+
+# additonal: disks attaching
+* https://github.com/pbachu99/thewindows/tree/master/disksCreation
 
 
