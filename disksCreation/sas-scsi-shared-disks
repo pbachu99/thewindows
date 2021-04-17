@@ -1,31 +1,35 @@
-# Creating SAS/SCSI disks of fixed size
-VBoxManage createmedium disk --filename clsd1 --size 2048 --format VHD --variant Fixed
-VBoxManage createmedium disk --filename clsd2 --size 2048 --format VHD --variant Fixed
-VBoxManage createmedium disk --filename clsd3 --size 2048 --format VHD --variant Fixed
-VBoxManage createmedium disk --filename clsd4 --size 1024 --format VHD --variant Fixed
+# creating SAS/SCSI disks of fixed size
+# SAS is advanced to SCSI Controller in the way SATA is advance to ATA
+# Info for novice users: we run these commands on host system (on your PC/Laptop), but not in virtual machine
+VBoxManage createmedium disk --filename clsd1 --size 2048 --format vmdk --variant Fixed
+VBoxManage createmedium disk --filename clsd2 --size 2048 --format vmdk --variant Fixed
+VBoxManage createmedium disk --filename clsd3 --size 2048 --format vmdk --variant Fixed
+VBoxManage createmedium disk --filename clsd4 --size 1024 --format vmdk --variant Fixed
 
-# Creation of SAS Controller 
+# attaching SAS/SCSI Controller 
+# replace vm_name with your virtual box name / virtual machine name
 VBoxManage storagectl vm_name --name "LSILogicSAS" --add sas --controller  LSILogicSAS
 VBoxManage storagectl vm_name --name "LSILogicSAS" --add sas --controller  LSILogicSAS
 
-# Make disks shareable
-VBoxManage modifymedium disk clsd1.vhd --type shareable
-VBoxManage modifymedium disk clsd2.vhd --type shareable
-VBoxManage modifymedium disk clsd3.vhd --type shareable
-VBoxManage modifymedium disk clsd4.vhd --type shareable
+# make disks shareable
+VBoxManage modifymedium disk clsd1.vmdk --type shareable
+VBoxManage modifymedium disk clsd2.vmdk --type shareable
+VBoxManage modifymedium disk clsd3.vmdk --type shareable
+VBoxManage modifymedium disk clsd4.vmdk --type shareable
 
-# Connect them to the 1st VM
-VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 0 --device 0 --type hdd  --medium clsd1.vhd --mtype shareable
-VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 1 --device 0 --type hdd  --medium clsd2.vhd --mtype shareable
-VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 2 --device 0 --type hdd  --medium clsd3.vhd --mtype shareable
-VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 3 --device 0 --type hdd  --medium clsd4.vhd --mtype shareable
-
-
-# Connect them to the 2nd VM
-VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 0 --device 0 --type hdd --medium clsd1.vhd --mtype shareable
-VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 1 --device 0 --type hdd --medium clsd2.vhd --mtype shareable
-VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 2 --device 0 --type hdd  --medium clsd3.vhd --mtype shareable
-VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 3 --device 0 --type hdd  --medium clsd4.vhd --mtype shareable
+# connect them to the 1st VM
+# replace vm_name with your virtual box name / virtual machine name
+# assuming port 0 and 1 were already allocated to machine we continue with 2...
+VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 2 --device 0 --type hdd  --medium clsd1.vmdk --mtype shareable
+VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 3 --device 0 --type hdd  --medium clsd2.vmdk --mtype shareable
+VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 4 --device 0 --type hdd  --medium clsd3.vmdk --mtype shareable
+VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 5 --device 0 --type hdd  --medium clsd4.vmdk --mtype shareable
 
 
-# Connect them to the 3rd VM
+# connect them to the 2nd VM
+VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 2 --device 0 --type hdd --medium clsd1.vmdk --mtype shareable
+VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 3 --device 0 --type hdd --medium clsd2.vmdk --mtype shareable
+VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 4 --device 0 --type hdd  --medium clsd3.vmdk --mtype shareable
+VBoxManage storageattach vm_name --storagectl "LSILogicSAS" --port 5 --device 0 --type hdd  --medium clsd4.vmdk --mtype shareable
+
+# connect them to the 3rd VM

@@ -8,7 +8,7 @@ change to the directory where the VM is or create individual directory for disks
 The VM should be in shut down state 
 Below is an example for creating disks in win2k19-1 directory:
 $ pwd
-/d/git/vagrant/thewindows/win2k19-1
+/d/git/thewindows/win2k19-1
 -- we create two 20 GB disks in this directory and attach to VM
 -- $VM is the Virtual Machine Name you have
 
@@ -16,8 +16,9 @@ VBoxManage createmedium disk --filename disk1.vhd --size 20480 --format VHD
 VBoxManage createmedium disk --filename disk2.vhd --size 20480 --format VHD
 
 # assuming Port 0 and 1 are already in use 
-VBoxManage storageattach $VM --storagectl "SATA Controller" --port 2 --device 0 --type hdd --medium disk1.vhd
-VBoxManage storageattach $VM --storagectl "SATA Controller" --port 3 --device 0 --type hdd --medium disk2.vhd
+# replace VM with your virtual box name / virtual machine name without 
+VBoxManage storageattach VM --storagectl "SATA Controller" --port 2 --device 0 --type hdd --medium disk1.vhd
+VBoxManage storageattach VM --storagectl "SATA Controller" --port 3 --device 0 --type hdd --medium disk2.vhd
 
 2nd Step:
 Start the VM now and the two disks will be attached if no error was thrown with above command
